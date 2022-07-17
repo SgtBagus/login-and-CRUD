@@ -13,24 +13,23 @@
                     <div class="card-body px-0 pb-2">
                         <div class="table-responsive p-0">
                             <div class="card-body">
-                                <form role="form">
+                                <form action="./system/input_user.php" method="POST">
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="name" class="form-control" placeholder="Name">
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="input-group input-group-outline mb-3">
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-check form-check-info text-start ps-0">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                                        <input class="form-check-input" name="login_func" type="checkbox" id="flexCheckDefault" value="true">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Login Function
                                         </label>
                                     </div>
-                                    <div class="text-center">
-                                        <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Tambah</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Tambah</button>
                                 </form>
                             </div>
                         </div>
@@ -39,6 +38,7 @@
             </div>
         </div>
     </div>  
+
 <?php
   include('template/footer.php')
 ?>
