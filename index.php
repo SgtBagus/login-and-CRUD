@@ -29,7 +29,6 @@
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Login Fungsion</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created At</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Updated At</th>
                       <th class="text-secondary opacity-7"></th>
@@ -47,19 +46,6 @@
                         </td>
                         <td class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold"><?php echo $data['email'] ?></span>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <?php
-                            if ($data['login_func'] === '1') {
-                          ?>
-                            <span class="badge badge-sm bg-gradient-success">Allowed</span>
-                          <?php
-                            } else {
-                          ?>
-                            <span class="badge badge-sm bg-gradient-danger">Not Allowed</span>
-                          <?php
-                            }
-                          ?>
                         </td>
                         <td class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold"><?php echo $data['created_at'] ?></span>

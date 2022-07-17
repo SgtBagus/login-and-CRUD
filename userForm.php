@@ -1,5 +1,9 @@
 <?php
   include('template/header.php');
+  
+  if (isset($_GET['id'])) {
+    include('system/get_user.php');
+  }
 ?>
     <div class="container-fluid py-4">
         <div class="row">
@@ -13,21 +17,49 @@
                     <div class="card-body px-0 pb-2">
                         <div class="table-responsive p-0">
                             <div class="card-body">
-                                <form action="./system/input_user.php" method="POST">
+                                <?php
+                                    if (isset($_GET['id'])) {
+                                ?>
+                                    <form
+                                        action="./system/update_user.php"
+                                        method="POST"
+                                    >
+                                <?php
+                                    } else {
+                                ?>
+                                    <form
+                                        action="./system/input_user.php"
+                                        method="POST"
+                                    >
+                                <?php
+                                    }
+                                ?>
                                     <div class="input-group input-group-outline mb-3">
-                                        <input type="text" name="name" class="form-control" placeholder="Name">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            class="form-control"
+                                            placeholder="Name"
+                                            value="<?php if (isset($_GET['id'])) { echo $row['name']; }?>"
+                                        >
+                                        <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            class="form-control"
+                                            placeholder="Email"
+                                            value="<?php if (isset($_GET['id'])) { echo $row['email']; }?>"
+                                        >
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <input type="password" name="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="form-check form-check-info text-start ps-0">
-                                        <input class="form-check-input" name="login_func" type="checkbox" id="flexCheckDefault" value="true">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Login Function
-                                        </label>
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            class="form-control"
+                                            placeholder="New Password"
+                                        >
                                     </div>
                                     <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Tambah</button>
                                 </form>
